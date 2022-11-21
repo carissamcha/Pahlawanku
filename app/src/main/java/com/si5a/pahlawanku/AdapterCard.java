@@ -28,7 +28,7 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
     @NonNull
     @Override
     public ClassViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View varView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
+        View varView = LayoutInflater.from(ctx).inflate(R.layout.item_card, parent, false);
         return new ClassViewHolder(varView);
     }
 

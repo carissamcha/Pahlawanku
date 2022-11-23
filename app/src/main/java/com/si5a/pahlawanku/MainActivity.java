@@ -1,6 +1,7 @@
 package com.si5a.pahlawanku;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         rvPahlawan.setHasFixedSize(true);
 
         data.addAll(DataPahlawan.ambilDataPahlawan());
-        tampilDataCard();
+        // tampilDataCard();
+        tampilDataGrid();
     }
 
     private void tampilDataCard(){
@@ -30,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         AdapterCard AC = new AdapterCard(data, MainActivity.this);
         rvPahlawan.setAdapter(AC);
 
+    }
 
+    private void tampilDataGrid(){
+        rvPahlawan.setLayoutManager(new GridLayoutManager(this, 2));
+        AdapterGrid AG = new AdapterGrid(data, MainActivity.this);
+        rvPahlawan.setAdapter(AG);
     }
 
 }
